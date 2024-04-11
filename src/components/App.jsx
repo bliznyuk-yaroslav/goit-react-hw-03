@@ -7,11 +7,7 @@ import ContactForm from "../components/ContactForm/ContactForm";
 export default function App() {
   const [contact, setContact] = useState(() => {
     const savedContacts = localStorage.getItem('contacts');
-    if(savedContacts.length !== 0){
-        return JSON.parse(savedContacts)
-    }
-    return {initialContacts}
-    // return savedContacts ? JSON.parse(savedContacts) : initialContacts;
+    return savedContacts ? JSON.parse(savedContacts) : initialContacts;
   });
 
   useEffect(() => {
